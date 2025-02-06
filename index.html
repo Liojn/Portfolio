@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio</title>
+    <style>
+        :root {
+            --bg-dark: #000000;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --card-bg: #111111;
+            --blue: #2563eb;
+            --purple: #a855f7;
+            --green: #22c55e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .intro {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .intro-content {
+            flex: 1;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-icon {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem;
+            border-radius: 2rem;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .about {
+            margin-bottom: 4rem;
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .about p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .projects h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .projects-intro {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .project-status {
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .status-progress { background: var(--blue); }
+        .status-maintained { background: var(--purple); }
+        .status-completed { background: var(--green); }
+
+        .project-date {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 1024px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="intro">
+            <div class="intro-content">
+                <div class="social-links">
+                    <a href="#" class="social-icon">🏠</a>
+                    <a href="#" class="social-icon">📱</a>
+                    <a href="#" class="social-icon">💼</a>
+                    <a href="#" class="social-icon">📞</a>
+                    <a href="#" class="social-icon">✈️</a>
+                    <a href="#" class="social-icon">📸</a>
+                    <a href="#" class="social-icon">🌟</a>
+                </div>
+                <h1>Hi, I'm Kiefer Yew 👋</h1>
+                <p>Passionate developer with a love for creating innovative solutions. I specialize in web development and enjoy working with various technologies to bring ideas to life. My goal is to build applications that are not only functional but also user-friendly and visually appealing. 👨‍💻</p>
+            </div>
+            <img src="/api/placeholder/120/120" alt="Profile" class="profile-image">
+        </section>
+
+        <section class="about">
+            <h2>About</h2>
+            <p>I'm a passionate software developer from Bangalore who loves turning ideas into functional, user-friendly applications. From crafting sleek weather apps to automating LeetCode-to-GitHub workflows, I enjoy building tools that make life easier. Recently, I developed Leet2Git, a tool that transforms LeetCode problems into well-structured GitHub repositories, and Get-My-Attendance, a WiFi-based attendance system. I also won the *Best About Us Page Award in a web design competition and ranked Top 5 in a college hackathon*. Currently, I'm sharpening my web development skills while gearing up to explore AI. 🚀</p>
+        </section>
+
+        <section class="projects">
+            <h2>Featured Projects</h2>
+            <p class="projects-intro">I build projects from 0 to 1, turning ideas into reality. Take a look at some of my favorite projects below.</p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="/images/FED.png" alt="FED" class="project-image">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <span class="project-status status-completed">Completed</span>
+                            <span class="project-date">Feburary 2024</span>
+                        </div>
+                        <h3>Cards of Chaos</h3>
+                        <p class="project-description">An immersive fantasy web game where players draw cards to explore three unique realms: grasslands, caves, and netherworld. Face challenging bosses, wield magical abilities, and overcome obstacles in this adventure-packed experience designed for teenage gamers. My first Front-End project.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">RestDB</span>
+                            <span class="tech-tag">LottieFiles</span>
+                        </div>
+                        <hr style="border: none; height: 1px; background-color: rgba(255, 255, 255, 0.1); margin: 1rem 0;" />
+                        <div class="project-links">
+                            <a href="https://github.com/Liojn/Lucas-and-Kiefer-Final-FED" class="project-link">Github</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="/images/DSA portfolio.png" alt="LeetCode Solutions" class="project-image">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <span class="project-status status-progress">In Progress</span>
+                            <span class="project-date">Feburary 2025</span>
+                        </div>
+                        <h3>Data Structure Assignment</h3>
+                        <p class="project-description">A repository containing well-organized data strucutres I coded out together with my partner for my current Data Structure and Algorithm.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">DSA</span>
+                            <span class = "tech-tag">C++</span>
+                            <span class="tech-tag">Problem Solving</span>
+                            <span class="tech-tag">Well Organized</span>
+                        </div>
+                        <hr style="border: none; height: 1px; background-color: rgba(255, 255, 255, 0.1); margin: 1rem 0;" />
+                        <div class="project-links">
+                            <a href="https://github.com/LauYanHui/DSA_Assignment" class="project-link">Github</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                  <img src="/images/FSDP.png" alt="AgriTech" class="project-image">
+                  <div class="project-content">
+                      <div class="project-header">
+                          <span class="project-status status-completed">Completed</Command></span>
+                          <span class="project-date">Feb 2025</span>
+                      </div>
+                      <h3>AgriTech</h3>
+                      <p class="project-description">My first fullstack application, built to help agricultural businesses achieve Net-Zero carbon emissions. Leverages modern web technologies to track, analyze, and optimize carbon footprint across farming operations. 🌱 Built with Next.js and MongoDB for scalable performance.</p>
+                      <div class="tech-stack">
+                          <span class="tech-tag">Next.js</span>
+                          <span class="tech-tag">TypeScript</span>
+                          <span class="tech-tag">React</span>
+                          <span class="tech-tag">MongoDB</span>
+                      </div>
+                      <hr style="border: none; height: 1px; background-color: rgba(255, 255, 255, 0.1); margin: 1rem 0;" />
+                      <div class="project-links">
+                          <a href="https://github.com/Liojn/FSDP" class="project-link">Github</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="project-card">
+                <img src="/images/BED.png" alt="BED Project" class="project-image">
+                <div class="project-content">
+                    <div class="project-header">
+                        <span class="project-status status-completed">Completed</span>
+                        <span class="project-date">Jul 2023</span>
+                    </div>
+                    <h3>EcoImpact</h3>
+                    <p class="project-description">My first backend project implementing MVC architecture. Built with Node.js and MSSQL, featuring user authentication, event management, donation system, and feedback functionality. Includes full API documentation with Swagger and follows best practices for code organization. 🔧</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Express</span>
+                        <span class="tech-tag">MSSQL</span>
+                        <span class="tech-tag">MVC</span>
+                        <span class="tech-tag">Swagger</span>
+                    </div>
+                    <hr style="border: none; height: 1px; background-color: rgba(255, 255, 255, 0.1); margin: 1rem 0;" />
+                    <div class="project-links">
+                        <a href="https://github.com/Liojn/BED2024Apr_P07_T02" class="project-link">Github</a>
+                    </div>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <img src="/images/MAD.jpeg" alt="MAD Project" class="project-image">
+                <div class="project-content">
+                    <div class="project-header">
+                        <span class="project-status status-completed">Completed</span>
+                        <span class="project-date">July 2024</span>
+                    </div>
+                    <h3>Fitness Ultimate: Calisthenics King</h3>
+                    <p class="project-description">My first mobile app development project using Java. Built a comprehensive fitness tracking app featuring food tracking, workout scheduling, user authentication, an interactive chatbot, and a workout calendar. Advanced features include AI-powered movement tracking, widgets, and Google Maps integration for finding nearby gyms. 📱</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Android Studio</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">Google Maps API</span>
+                        <span class="tech-tag">Cloud API</span>
+                    </div>
+                    <hr style="border: none; height: 1px; background-color: rgba(255, 255, 255, 0.1); margin: 1rem 0;" />
+                    <div class="project-links">
+                        <a href="https://github.com/Liojn/MAD24_P01_Team1" class="project-link">Github</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+              <img src="/images/SPM.png" alt="SPM Project" class="project-image">
+              <div class="project-content">
+                  <div class="project-header">
+                      <span class="project-status status-completed">Completed</span>
+                      <span class="project-date">Jul 2024</span>
+                  </div>
+                  <h3>Ngee Ann City</h3>
+                  <p class="project-description">A collaborative project with 4 teammates implementing SCRUM methodology. Built a browser-based city building game with features like free play mode, arcade mode, leaderboard system, and save/load functionality. First hands-on experience with agile development practices and sprint planning. 🎮</p>
+                  <div class="tech-stack">
+                      <span class="tech-tag">JavaScript</span>
+                      <span class="tech-tag">HTML</span>
+                      <span class="tech-tag">CSS</span>
+                      <span class="tech-tag">SCRUM</span>
+                      <span class="tech-tag">Agile</span>
+                  </div>
+                  <hr style="border: none; height: 1px; background-color: rgba(255, 255, 255, 0.1); margin: 1rem 0;" />
+                  <div class="project-links">
+                      <a href="https://github.com/lucas0eo/SPM-Ngee-Ann-City" class="project-link">Github</a>
+                  </div>
+              </div>
+           </div>
+
+
+            </div>
+        </section>
+    </div>
+</body>
+</html>
